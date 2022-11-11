@@ -12,10 +12,12 @@ create table car
 (reg_num varchar(10),model varchar(15),year year,primary key(reg_num));
 select *from car;
 show tables;
+desc car;
 create table owns
 (driver_id char(10),reg_num varchar(10),primary key(driver_id,reg_num),foreign key(driver_id)references person(driver_id),
 foreign key(reg_num)references car(reg_num));
 select *from owns;
+desc owns;
 create table participated
 (driver_id varchar(10),reg_num varchar(10),report_num int, damage_amount int,primary key(driver_id,reg_num,report_num),foreign key(driver_id)references person(driver_id),foreign key(reg_num)references car(reg_num),foreign key(report_num)references accident(report_num));
 select *from participated;
